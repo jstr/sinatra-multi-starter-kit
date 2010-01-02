@@ -1,0 +1,3 @@
+#!/bin/bash
+
+irb -r scripts/console_loader.rb
