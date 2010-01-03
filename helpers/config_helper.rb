@@ -26,5 +26,11 @@ module ConfigHelper
     def load_files_in(directory_name)
       get_files_in(directory_name).sort.each { |ext| load ext }
     end
-  
+
+    ## Initializes DataMapper connection to MySQL
+    def setup_datamapper
+      require 'dm-core'
+      require 'dm-timestamps'
+      DataMapper.setup(:default, 'mysql://localhost/sinatra-starter-kit')
+    end
 end

@@ -1,9 +1,9 @@
-require 'dm-core'
-require 'dm-timestamps'
-DataMapper.setup(:default, 'mysql://localhost/sinatra-starter-kit')
-
 require File.join(File.dirname(__FILE__), '..', 'helpers', 'config_helper.rb')
 include ConfigHelper
+
+# Initialize DM
+setup_datamapper
+
 load_files_in 'models'
 
 def all_model_classes

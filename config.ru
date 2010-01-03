@@ -7,9 +7,8 @@ class Rack::Builder
 end
   
 ## Connect to MySQL database via DataMapper.
-require 'dm-core'
-require 'dm-timestamps'
-DataMapper.setup(:default, 'mysql://localhost/sinatra-starter-kit')
+# Uncomment the line below to enable DataMapper support.
+# setup_datamapper
 
 ## Load the main application class.
 require File.join(File.dirname(__FILE__), 'app.rb')
