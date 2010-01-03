@@ -1,4 +1,4 @@
-Sinatra Starter Kit
+Sinatra Multi Starter Kit
 ===================
 
 A Sinatra starter kit for a multi-file web application. I use this for building basic sinatra apps.
