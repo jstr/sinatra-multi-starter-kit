@@ -7,9 +7,12 @@ setup_datamapper
 load_files_in 'models'
 
 def all_model_classes
-  get_class_names_in(File.join(File.dirname(__FILE__), '..', 'models')).map do |name|
-    Module.send :eval, name
+  candidates = get_class_names_in(File.join(File.dirname(__FILE__), '..', 'models')).map do |name|
+    Module.send(:eval, name)
   end
+
+  # Only return valid model classes.
+  candidates.select { |c| c.include?(DataMapper::Resource) }
 end
 
 namespace :dm do
