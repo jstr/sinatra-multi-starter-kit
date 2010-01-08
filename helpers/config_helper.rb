@@ -4,8 +4,11 @@ module ConfigHelper
   protected
   
   ## Returns an Array of .rb file names in the given directory.
-  ## If the option :traverse => true is set, recurses into
-  ## sub-directories to load files.
+  ## Options:
+  ## If :traverse => true is set, recurses into sub-directories to
+  ## load files. Defaults to false.
+  ## If :full_paths => false is set, returns file names without any
+  ## paths. E.g. /Apps/file_name.rb vs. file_name.rb.
   def get_files_in(directory_name, options = {})
     options = {
       :traverse => false,
